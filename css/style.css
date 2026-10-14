@@ -156,13 +156,17 @@ footer {
 }
 
 .form-group input,
-.form-group select {
+.form-group select,
+.form-group textarea {
   width: 100%;
   height: 45px;
+  padding: 0 17px;
   border-radius: 12px;
   border: 1px solid #e8eaed;
-  padding: 0 17px;
+  font-size: 16px;
   background-color: #fff;
+  display: flex;
+  align-items: center;
 }
 
 :focus {
@@ -175,8 +179,61 @@ footer {
   font-size: 16px;
 }
 
+@supports (appearance: base-select) {
+  select,
+  select::picker(select) {
+    appearance: base-select;
+  }
+
+  select::picker(select) {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+
+  select option {
+    padding: 8px 12px;
+  }
+
+  select option:checked {
+    background-color: #2b2d4210;
+  }
+}
+
 .form-row {
   display: flex;
   gap: 10px;
   width: 100%;
+}
+
+#watched-date {
+  display: block;
+}
+
+.form-group-textarea {
+  height: 177px;
+}
+
+.form-group-textarea textarea {
+  height: 143px;
+  padding-top: 15px;
+}
+
+.form-group-textarea textarea::placeholder {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  color: var(--input-text); 
+}
+
+.submit-button {
+  width: 100%;
+  padding: 12px;
+  background-color: #2b2d42;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 20px;
+  cursor: pointer;
+  margin-top: 10px;
 }
