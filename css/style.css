@@ -180,6 +180,7 @@ footer {
 }
 
 @supports (appearance: base-select) {
+
   select,
   select::picker(select) {
     appearance: base-select;
@@ -236,4 +237,9 @@ footer {
   border: none;
   border-radius: 12px;
   cursor: pointer;
+}
+
+.movie-card-link {
+  color: inherit;
+  text-decoration: none;
 }
